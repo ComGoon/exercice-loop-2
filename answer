@@ -1,0 +1,66 @@
+<!--Author: Oussoumane Mahaman Madani  ( GOMYC{}DE )-->
+
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+             <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+                         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+             <title>Document</title>
+</head>
+<body>
+
+
+<?php
+/**
+ * Created by PhpStorm.
+ * User: comgoon
+ * Date: 8/12/18
+ * Time: 5:45 PM
+ */
+
+
+
+$z = 9; //the limit of multiplication table
+
+echo "<table border='1' style='background: yellow;'>"; //table opning tag, the table will have yellow background color
+
+echo "<caption style='text-transform: uppercase; text-decoration: underline;' align='top'><h1> ".$z. " Times Table  </h1></caption>"; //adding a caption (title) to my table, at the top
+
+echo "<tr>"; //first row opening
+
+
+echo "<th>❌</th>"; //top-left cell, holding an imoji cross, browsers will read the imoji cause of the "<meta charset="UTF-8">" in the head tag
+
+//this while is to write my table first head row (1-9)
+$i = 1;
+while ($i<=$z){
+    echo "<th style='font-size: 30px;'>".$i."</th>"; //displaying the figure and setting the font size to 30px
+    $i++;
+}
+
+echo "</tr>"; //first row closing tag
+
+//the first left row together with the body of my table
+$x = 1;
+    while($x<=$z){
+
+        echo "<tr>"; //at each loop, a row is added
+
+        echo "<th style='font-size: 30px;'>".$x."</th>"; //(1-9) displays in the first row
+
+        //building the table body
+        $y = 1;
+        while($y<=$z){
+            echo "<td style='background: red; color: #fff; font-size: 30px;'>".($x*$y)."</td>"; //at each loop, a cell contening the result of the multiplication is created
+            $y++;
+        }
+        echo "</tr>"; //closing the row which was added
+        $x++;
+    }
+?>
+
+
+</body>
+</html>
